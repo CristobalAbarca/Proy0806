@@ -6,32 +6,33 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
         <meta charset="UTF-8">
+        <script src="jquery/jquery-3.2.1.min.js" type="text/javascript"></script>
         <title></title>
     </head>
     <body>
-        <form id="frmusuario">
-            <div><label>Usuario:</label><input id="nomusuario" type="text" name="nomusuario" >
-            <div><label>Clave:</label><input id="clave" type="password" name="clave" >
-            <input id="enviar" type="button" onclick="" value="Enviar">        
-     </form>
-    
-    </body>
-     <script>
-            $(document).ready(function (){
-                    $("#enviar").click(function(){
-                           /* $("form").hide();
-                            alert(" Ocultaste el formulario ;-)"+ $ ("#nomusuario").val());*/
-                            
-                            if($("#numusuario").val()!="" && $("#clave").val()!=""){
-                                $("#frmusuario").submit();
-                            }
-                                else{
-                                    alert("Debe Agregar el usuario y clave");
-                            }
-                        });
-                    } );
-        </script>
+        <form id="frmusuario" action="controlador/validarUsuario.php" method="post">
+            <div><label>Usuario:</label><input type="text" name="nomusuario" id="nomusuario"></div>
+            <div><label>Clave:</label><input type="password" name="clave" id="clave"></div>
+            <input id="enviar" type="button" onclick="" value="enviar">
             
+            
+        </form>
+        
+    </body>
+    <script>
+        $(document).ready(function(){
+        $("#enviar").click(function(){
+        /*$("form").hide();
+        alert("cuidao todo cambio que hagas se va a ir \n\
+              a la concha de la madre " + $("#nomusuario").val()); */
+         if($("#nomusuario").val()!="" && $("#clave").val()!=""){
+            $("#frmusuario").submit();
+         }
+         else{
+            alert("Colocar bien datos");
+          }
+        }); 
+         });
+   </script>
 </html>
