@@ -11,13 +11,27 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        <form>
-            <input type="text" name="nomusuario" id="nomusuario">
-            <input type="password" name="clave" id="clave">
-            <input type="button" onclick="" value="enviar">
-            
-            
+        <form id="frmusuario">
+            <div><label>Usuario:</label><input id="nomusuario" type="text" name="nomusuario" >
+            <div><label>Clave:</label><input id="clave" type="password" name="clave" >
+            <input id="enviar" type="button" onclick="" value="Enviar">        
      </form>
-        
+    
     </body>
+     <script>
+            $(document).ready(function (){
+                    $("#enviar").click(function(){
+                           /* $("form").hide();
+                            alert(" Ocultaste el formulario ;-)"+ $ ("#nomusuario").val());*/
+                            
+                            if($("#numusuario").val()!="" && $("#clave").val()!=""){
+                                $("#frmusuario").submit();
+                            }
+                                else{
+                                    alert("Debe Agregar el usuario y clave");
+                            }
+                        });
+                    } );
+        </script>
+            
 </html>
